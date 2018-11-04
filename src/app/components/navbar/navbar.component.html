@@ -1,0 +1,17 @@
+<div class="navBar">
+  <div id="logo"></div>
+  <div id="heading">
+    <a>Insta Chat</a>
+  </div>
+  <div class="links">
+    <span>
+      <a *ngIf="isAuth" href="/chat">Chat</a>
+    </span>
+    <span>
+      <a *ngIf="isAuth" href="/profile">Profile</a>
+    </span>
+    <span>
+      <a *ngIf="isAuth" href="/" (click)="logout()">Logout</a>
+    </span>
+  </div>
+</div>
