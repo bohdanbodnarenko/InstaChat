@@ -3,7 +3,6 @@ import { LoginService } from "@services/login/login.service";
 import { User } from "@models/User/User";
 import { AngularFireList, AngularFireDatabase } from "angularfire2/database";
 import { ChatMessage } from "@models/chat-message.model";
-import { log } from "util";
 
 @Injectable({
   providedIn: "root"
@@ -67,5 +66,8 @@ export class ChatService {
       now.getUTCHours() + ":" + now.getUTCMinutes() + ":" + now.getUTCSeconds();
 
     return date + " " + time;
+  }
+  deleteMessage(message: ChatMessage){
+    this.db.object('/messages/' + message.key).remove()
   }
 }
