@@ -19,7 +19,7 @@ export class LoginService {
 
     private posts: Post[];
     private selectedPost: Post;
-    private homePageUrl: string = "http://localhost:4200";
+    private homePageUrl: string = "http://localhost:4200/login";
     private pageToReditect: string = "http://localhost:4200/profile";
 
     public setReadyUser(user: User): void {

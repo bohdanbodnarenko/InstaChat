@@ -44,6 +44,10 @@ export class ProfileComponent implements OnInit {
     this.modalService.close(id);
   }
 
+  logOut(){
+      this.loginService.logout()
+  }
+
   ngOnInit() {
     this.loginService.getUserInfo().subscribe(
       response => {
@@ -55,6 +59,8 @@ export class ProfileComponent implements OnInit {
         console.log(err.message);
       }
     );
+
+    
 
     this.loginService.getPosts().subscribe(
       response => {

@@ -5,15 +5,11 @@ import { ChatroomComponent } from "@components/chatroom/chatroom.component";
 import { LoginComponent } from "@components/login/login.component";
 
 export const appRoutes: Routes = [
-  {
-    path: "",
-    redirectTo: "/",
-    pathMatch: "full"
-  },
   { path: "profile", component: ProfileComponent },
-  { path: "login", component: LoginComponent  },
+  { path: "login", component: LoginComponent },
   { path: "chat", component: ChatroomComponent },
-  { path: "**", redirectTo: "/", pathMatch: "full" },
+  { path: "**", redirectTo: "login", pathMatch: "full" },
+  { path: "", redirectTo: "login", pathMatch: "full" }
 ];
 
 @NgModule({

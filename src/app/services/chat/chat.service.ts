@@ -10,7 +10,6 @@ import { ChatMessage } from "@models/chat-message.model";
 export class ChatService {
   private user: User;
   private chatMessages: AngularFireList<ChatMessage>;
-  private userList: AngularFireList<User>;
 
   constructor(
     private loginService: LoginService,
@@ -32,24 +31,6 @@ export class ChatService {
     });
   }
 
-  addUser(user:User){
-    this.getUserList().snapshotChanges().subscribe(responce =>{
-      responce.forEach(elem=>{
-        if (user.key!==elem.key) {
-          this.userList.push(user)
-        }
-      })
-    })
-  }
-
-  getUserList(): AngularFireList<User> {
-    this.db.list("users", ref => ref.limitToLast(25).orderByKey()).snapshotChanges().subscribe(ref=>{console.log(ref)});
-    // this.addUser(this.user);
-    // this.db.list("users", ref => ref.limitToLast(25).orderByKey()).snapshotChanges().subscribe(ref=>{console.log(ref)});
-    
-    return this.db.list("users", ref => ref.limitToLast(25).orderByKey());
-    
-  }
   getMessages(): AngularFireList<ChatMessage> {
     return this.db.list("messages", ref => ref.limitToLast(25).orderByKey());
   }

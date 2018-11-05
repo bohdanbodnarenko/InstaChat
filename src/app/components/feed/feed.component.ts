@@ -9,7 +9,7 @@ import { LoginService } from '@services/login/login.service';
   styleUrls: ['./feed.component.css']
 })
 export class FeedComponent implements OnInit, OnChanges {
-  private feed: ChatMessage[];
+  feed: ChatMessage[];
   @ViewChild ('feedDiv') myScrollContainer:ElementRef;
 
   constructor(private chat: ChatService,private loginService: LoginService) { }
@@ -24,10 +24,6 @@ export class FeedComponent implements OnInit, OnChanges {
         this.feed.push(message);
       })
     });
-    
-    // console.log(this.myScrollContainer.nativeElement.scrollTop);
-    // this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-    
   }
   delete(message:ChatMessage){
       this.chat.deleteMessage(message); 

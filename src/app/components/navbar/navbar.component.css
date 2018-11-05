@@ -22,8 +22,6 @@
     flex: 1;
     padding: 24px 0px 8px 10px;
     height: 60px;
-    font-size: 1.8em;
-    font-weight: bold;
 }
 
 .links{
@@ -36,6 +34,10 @@
 #heading > a{
     text-decoration: none;
     color: black;
+    overflow: hidden;
+    font-size: 150%;
+    font-weight: bold;
+    
 }
 
 .links a{

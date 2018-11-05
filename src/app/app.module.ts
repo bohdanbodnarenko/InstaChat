@@ -17,7 +17,6 @@ import { ChatService } from "@services/chat/chat.service";
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from "environments/environment";
-import { UserListComponent } from "@components/user-list/user-list.component";
 import { ChatFormComponent } from "@components/chat-form/chat-form.component";
 import { FeedComponent } from "@components/feed/feed.component";
 import { NavbarComponent } from "@components/navbar/navbar.component";
@@ -32,7 +31,6 @@ import { LoginComponent } from './components/login/login.component';
     UserPipe,
     ModalComponent,
     ChatroomComponent,
-    UserListComponent,
     ChatFormComponent,
     FeedComponent,
     NavbarComponent,
