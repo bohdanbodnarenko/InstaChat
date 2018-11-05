@@ -45,8 +45,6 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("123" + this.loginService.getAccessToken());
-
     this.loginService.getUserInfo().subscribe(
       response => {
         this.user = this.userPipe.transform(response);

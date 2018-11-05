@@ -14,7 +14,7 @@ export class ChatService {
 
   constructor(
     private loginService: LoginService,
-    private db: AngularFireDatabase
+    private db: AngularFireDatabase,
   ) {
     this.user = this.loginService.getReadyUser();
   }
@@ -68,6 +68,10 @@ export class ChatService {
     return date + " " + time;
   }
   deleteMessage(message: ChatMessage){
-    this.db.object('/messages/' + message.key).remove()
+    if (message.userName===this.loginService.getReadyUser().userName) {
+      if(confirm("Are you sure to delete: "+message.message)){
+      this.db.object('/messages/' + message.key).remove()
+      } 
+    }
   }
 }

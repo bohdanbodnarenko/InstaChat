@@ -30,14 +30,7 @@ export class FeedComponent implements OnInit, OnChanges {
     
   }
   delete(message:ChatMessage){
-    if (message.userName===this.loginService.getReadyUser().userName) {
-      let isConfirm = confirm("Are you sure to delete: "+message.message);
-      console.log(isConfirm);
-      
-      this.chat.deleteMessage(message);
-    }
-
-    
+      this.chat.deleteMessage(message); 
   }
   ngOnChanges() {
     this.chat.getMessages().snapshotChanges().subscribe(responce=>{
