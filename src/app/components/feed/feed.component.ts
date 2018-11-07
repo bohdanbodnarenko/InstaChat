@@ -27,6 +27,7 @@ export class FeedComponent implements OnInit, OnChanges {
   }
   delete(message:ChatMessage){
       this.chat.deleteMessage(message); 
+      return false;
   }
   ngOnChanges() {
     this.chat.getMessages().snapshotChanges().subscribe(responce=>{

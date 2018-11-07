@@ -1,5 +1,5 @@
 <div  class="feed" >
 <div *ngFor="let message of feed " class="message">
-      <app-message [chatMessage]=message  (dblclick) = "delete(message)"></app-message>
+      <app-message [chatMessage]=message (contextmenu) = "delete(message)"></app-message>
     </div>
   </div>
