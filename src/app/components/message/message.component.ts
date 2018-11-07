@@ -19,8 +19,6 @@ export class MessageComponent implements OnInit {
 
   constructor(private loginService: LoginService) {
     this.user = loginService.getReadyUser();
-  
-    
     // this.isOwnMessage = this.user.userName === this.chatMessage.userName;
   }
 
@@ -28,6 +26,6 @@ export class MessageComponent implements OnInit {
     this.messageContent = chatMessage.message;
     this.timeStamp = chatMessage.timeSent;
     this.userName = chatMessage.userName;
-    this.isOwnMessage = this.user.userName == this.chatMessage.userName;
+    this.isOwnMessage = this.user.userName === this.chatMessage.userName;
   }
 }

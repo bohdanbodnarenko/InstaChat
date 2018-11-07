@@ -6,7 +6,7 @@ import { LoginComponent } from "@components/login/login.component";
 
 export const appRoutes: Routes = [
   { path: "profile", component: ProfileComponent },
-  { path: "login", component: LoginComponent },
+  { path: "login", component: LoginComponent},
   { path: "chat", component: ChatroomComponent },
   { path: "**", redirectTo: "login", pathMatch: "full" },
   { path: "", redirectTo: "login", pathMatch: "full" }

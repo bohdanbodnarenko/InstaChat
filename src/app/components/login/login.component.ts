@@ -19,23 +19,5 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    // if (
-    //   window.location.href.length >
-    //   this.loginService.getHomePageUrl().length + 1
-    // ) {
-      console.log(window.location.href);
-      console.log(window.location.href.indexOf("#access_token="));
-    if (window.location.href.indexOf("#access_token=") > 0) {
-
-
-      if (!this.loginService.getAccessToken()) {
-        this.isAuth = false;
-        let tmpUrl: string = window.location.href;
-        let tmpIndex: number = tmpUrl.indexOf("=");
-        this.loginService.setAccessToken(tmpUrl.substr(tmpIndex + 1));
-      }
-    } else {
-      this.isAuth = true;
-    }
   }
 }
