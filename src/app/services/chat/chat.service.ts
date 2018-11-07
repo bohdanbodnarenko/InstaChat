@@ -13,7 +13,7 @@ export class ChatService {
 
   constructor(
     private loginService: LoginService,
-    private db: AngularFireDatabase,
+    private db: AngularFireDatabase
   ) {
     this.user = this.loginService.getReadyUser();
   }
@@ -36,23 +36,16 @@ export class ChatService {
   }
 
   getTimeStamp() {
-    const now = new Date();
-    const date =
-      now.getUTCFullYear() +
-      "/" +
-      (now.getUTCMonth() + 1) +
-      "/" +
-      now.getUTCDate();
-    const time =
-      now.getUTCHours() + ":" + now.getUTCMinutes() + ":" + now.getUTCSeconds();
+    const hours = new Date().getHours();
+    const minutes = new Date().getMinutes();
 
-    return date + " " + time;
+    return hours + ":" + minutes;
   }
-  deleteMessage(message: ChatMessage){
-    if (message.userName===this.loginService.getReadyUser().userName) {
-      if(confirm("Are you sure to delete: "+message.message)){
-      this.db.object('/messages/' + message.key).remove()
-      } 
+  deleteMessage(message: ChatMessage) {
+    if (message.userName === this.loginService.getReadyUser().userName) {
+      if (confirm("Are you sure to delete: " + message.message)) {
+        this.db.object("/messages/" + message.key).remove();
+      }
     }
   }
 }

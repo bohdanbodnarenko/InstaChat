@@ -12,17 +12,15 @@ export class AppComponent implements OnInit {
     private loginService: LoginService,
     private activatedRoute: ActivatedRoute
   ) {
-      this.activatedRoute.fragment.subscribe((fragment: string) => {
+    this.activatedRoute.fragment.subscribe((fragment: string) => {
       if (fragment) {
         let tmpIndex: number = fragment.indexOf("=");
         this.loginService.setAccessToken(fragment.substr(tmpIndex + 1));
-      }        
-      });
+      }
+    });
   }
 
   public isAuth: boolean;
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 }
