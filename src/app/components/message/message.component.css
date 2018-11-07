@@ -5,13 +5,13 @@
     min-width: 400px;
     border-radius: 15px;
     align-items: stretch;
-    background-color: #eee;
+    background-color: #a5a5a5;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.23);
     margin: 20px;
 }
 
 .isOwnMessageContainer {
-    background-color: #01579B;
+    background-color: #0078e3;
 }
 
 .isOwnMessageData{
@@ -22,46 +22,54 @@
 .messageData {
     flex: 0.5;
     padding: 10px;
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
 
 .senderImg {
     border-radius: 50%;
-    width: 90px;
+    width: 60px;
 }
 
 .sender {
     display: block;
     color: #222;
     font-weight: bold;
+    text-align: left;
+    font-size: 0.7em
 }
 
 .isOwnSender {
-    color: #E1F5FE;
+    color:#fff;
+    text-align: right;
 }
 
 .timestamp {
     color: #555;
     font-style: italic;
     font-size: 1em;
+    float: left;
+    width: 100%;
 }
 
 .isOwnTimestamp {
-    color: #4FC3F7;
+    color: rgb(79, 195, 247);
+    font-size: 0.8em;
+    margin-bottom: 0;
+    float: right;
 }
 
 .messageContent {
     height: auto;
     flex: 9;
-    background-color: #fff;
+    background-color: #a5a5a5;
     padding: 10px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
 
 .isOwnMessageContent {
-    background-color: #E3F2FD;
-    color: #01579B;
+    background-color: #0078e3;
+    color: #fafafa;
     text-align: end;      
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;

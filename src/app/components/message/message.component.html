@@ -1,14 +1,15 @@
 <div class="messageContainer" [ngClass]="{'isOwnMessageContainer':isOwnMessage}">
   <div class="messageData" [ngClass]="{'isOwnMessageData':isOwnMessage}">
     <img src="{{chatMessage.img}}" class="senderImg">
-    <span class="sender" [ngClass]="{'isOwnSender':isOwnMessage}">
-      {{ userName }}
-    </span>
-    <span class="timestamp" [ngClass]="{'isOwnTimestamp':isOwnMessage}">
-      {{ timeStamp | date:'medium' }}
-    </span>
+    
   </div>
   <div class="messageContent" [ngClass]="{'isOwnMessageContent':isOwnMessage}">
+      <span class="sender" [ngClass]="{'isOwnSender':isOwnMessage}">
+          {{ userName }}
+        </span>
     {{ messageContent }}
+    <span class="timestamp" [ngClass]="{'isOwnTimestamp':isOwnMessage}">
+        {{ timeStamp }}
+      </span>
   </div>
 </div>

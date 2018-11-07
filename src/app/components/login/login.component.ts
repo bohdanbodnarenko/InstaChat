@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   public isAuth: boolean;
 
   private loginUrl: string =
-    "https://www.instagram.com/oauth/authorize/?client_id=389654896f884ec8bf642313b72d4943&redirect_uri=https://insta-chat-38bb4.firebaseapp.com/profile&response_type=token";
+    "https://www.instagram.com/oauth/authorize/?client_id=389654896f884ec8bf642313b72d4943&redirect_uri=http://localhost:4200/profile&response_type=token";
 
   onClick(): void {
     window.location.href = this.loginUrl;

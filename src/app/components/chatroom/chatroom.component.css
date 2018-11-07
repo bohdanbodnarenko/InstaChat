@@ -18,7 +18,7 @@
 .feedWrapper {
     background-color: #fff;
     background: 
-    linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9));
+    linear-gradient(181deg, rgba(79,195,247,0.9), rgba(0, 0, 0, 0.95));
     font-family: "Open Sans", sans-serif;
     font-size: 1.2em;
     flex: 6;
