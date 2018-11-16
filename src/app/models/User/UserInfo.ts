@@ -1,4 +1,4 @@
-export class UserInfo {
+export interface UserInfo {
     data: {
         id: number;
         username: string;

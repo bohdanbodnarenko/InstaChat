@@ -1,4 +1,4 @@
-export class UserInfo{
+export interface UserInfo{
     id : number;
     username : string;
     profile_picture : string;

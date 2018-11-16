@@ -1,4 +1,4 @@
-export class ChatMessage {
+export interface ChatMessage {
   key?: string;
   userName?: string;
   message?: string;

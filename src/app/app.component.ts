@@ -8,19 +8,7 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  constructor(
-    private loginService: LoginService,
-    private activatedRoute: ActivatedRoute
-  ) {
-    this.activatedRoute.fragment.subscribe((fragment: string) => {
-      if (fragment) {
-        let tmpIndex: number = fragment.indexOf("=");
-        this.loginService.setAccessToken(fragment.substr(tmpIndex + 1));
-      }
-    });
-  }
-
-  public isAuth: boolean;
+  constructor() {}
 
   ngOnInit() {}
 }

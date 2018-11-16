@@ -291,7 +291,7 @@ var ChatFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".mainContent{\r\n    display: flex;\r\n    height: 83%;\r\n}\r\n\r\n.userListWrapper {\r\n    background-color: #2A2845;\r\n    color: #fff;\r\n    display: flex;\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1.2em;\r\n    flex: 1;\r\n    order: 1;\r\n    padding:20px 0px 40px 30px;\r\n    border-right: 1px solid #222;\r\n}\r\n\r\n.feedWrapper {\r\n    background-color: #fff;\r\n    background: \r\n    linear-gradient(181deg, rgba(100,200,255,0.6), rgba(0, 0, 0, 0.9));\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1.2em;\r\n    flex: 6;\r\n    order: 2;\r\n    overflow-y: scroll;\r\n    padding:20px 0px 0px 24px;\r\n}\r\n\r\n.chatFormWrapper {\r\n    display: flex;\r\n    height: 50px;\r\n    background-color: #eee;\r\n    z-index: 3;\r\n}\r\n\r\n#scroll-style::-webkit-scrollbar-track\r\n{\r\n\tborder-radius: 10px;\r\n\tbackground-color: #F5F5F5;\r\n}\r\n\r\napp-user-list {\r\n    width: 100%;\r\n}\r\n\r\n* {\r\n    height: 100%;\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n}\r\n\r\n"
+module.exports = ".mainContent{\r\n    display: flex;\r\n    height: 83%;\r\n}\r\n\r\n.userListWrapper {\r\n    background-color: #2A2845;\r\n    color: #fff;\r\n    display: flex;\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1.2em;\r\n    flex: 1;\r\n    order: 1;\r\n    padding:20px 0px 40px 30px;\r\n    border-right: 1px solid #222;\r\n}\r\n\r\n.feedWrapper {\r\n    background-color: #fff;\r\n    background: \r\n    linear-gradient(181deg, rgba(79,195,247,0.9), rgba(0, 0, 0, 0.95));\r\n    font-family: \"Open Sans\", sans-serif;\r\n    font-size: 1.2em;\r\n    flex: 6;\r\n    order: 2;\r\n    overflow-y: scroll;\r\n    padding:20px 0px 0px 24px;\r\n}\r\n\r\n.chatFormWrapper {\r\n    display: flex;\r\n    height: 50px;\r\n    background-color: #eee;\r\n    z-index: 3;\r\n}\r\n\r\n#scroll-style::-webkit-scrollbar-track\r\n{\r\n\tborder-radius: 10px;\r\n\tbackground-color: #F5F5F5;\r\n}\r\n\r\napp-user-list {\r\n    width: 100%;\r\n}\r\n\r\n* {\r\n    height: 100%;\r\n    box-sizing: border-box;\r\n    margin: 0;\r\n    padding: 0;\r\n    border: 0;\r\n}\r\n\r\n"
 
 /***/ }),
 
@@ -373,7 +373,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div  class=\"feed\" >\n<div *ngFor=\"let message of feed \" class=\"message\">\n      <app-message [chatMessage]=message  (dblclick) = \"delete(message)\"></app-message>\n    </div>\n  </div>"
+module.exports = "<div  class=\"feed\" >\n<div *ngFor=\"let message of feed \" class=\"message\">\n      <app-message [chatMessage]=message (contextmenu) = \"delete(message)\"></app-message>\n    </div>\n  </div>"
 
 /***/ }),
 
@@ -421,6 +421,7 @@ var FeedComponent = /** @class */ (function () {
     };
     FeedComponent.prototype.delete = function (message) {
         this.chat.deleteMessage(message);
+        return false;
     };
     FeedComponent.prototype.ngOnChanges = function () {
         var _this = this;
@@ -529,7 +530,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".messageContainer {\r\n    display: flex;\r\n    height: auto;\r\n    width: 90%;\r\n    min-width: 400px;\r\n    border-radius: 15px;\r\n    align-items: stretch;\r\n    background-color: #eee;\r\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.23);\r\n    margin: 20px;\r\n}\r\n\r\n.isOwnMessageContainer {\r\n    background-color: #01579B;\r\n}\r\n\r\n.isOwnMessageData{\r\n    margin-left: auto;\r\n    order: 2;  \r\n}\r\n\r\n.messageData {\r\n    flex: 0.5;\r\n    padding: 10px;\r\n    font-size: 0.7em;\r\n}\r\n\r\n.senderImg {\r\n    border-radius: 50%;\r\n    width: 90px;\r\n}\r\n\r\n.sender {\r\n    display: block;\r\n    color: #222;\r\n    font-weight: bold;\r\n}\r\n\r\n.isOwnSender {\r\n    color: #E1F5FE;\r\n}\r\n\r\n.timestamp {\r\n    color: #555;\r\n    font-style: italic;\r\n    font-size: 1em;\r\n}\r\n\r\n.isOwnTimestamp {\r\n    color: #4FC3F7;\r\n}\r\n\r\n.messageContent {\r\n    height: auto;\r\n    flex: 9;\r\n    background-color: #fff;\r\n    padding: 10px;\r\n    border-top-right-radius: 15px;\r\n    border-bottom-right-radius: 15px;\r\n}\r\n\r\n.isOwnMessageContent {\r\n    background-color: #E3F2FD;\r\n    color: #01579B;\r\n    text-align: end;      \r\n    border-top-left-radius: 15px;\r\n    border-bottom-left-radius: 15px;\r\n    border-top-right-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}"
+module.exports = ".messageContainer {\r\n    display: flex;\r\n    height: auto;\r\n    width: 90%;\r\n    min-width: 400px;\r\n    border-radius: 15px;\r\n    align-items: stretch;\r\n    background-color: #a5a5a5;\r\n    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.26), 0 3px 6px rgba(0, 0, 0, 0.23);\r\n    margin: 20px;\r\n}\r\n\r\n.isOwnMessageContainer {\r\n    background-color: #0078e3;\r\n}\r\n\r\n.isOwnMessageData{\r\n    margin-left: auto;\r\n    order: 2;  \r\n}\r\n\r\n.messageData {\r\n    flex: 0.5;\r\n    padding: 10px;\r\n    font-size: 0.8em;\r\n}\r\n\r\n.senderImg {\r\n    border-radius: 50%;\r\n    width: 60px;\r\n}\r\n\r\n.sender {\r\n    display: block;\r\n    color: #222;\r\n    font-weight: bold;\r\n    text-align: left;\r\n    font-size: 0.7em\r\n}\r\n\r\n.isOwnSender {\r\n    color:#fff;\r\n    text-align: right;\r\n}\r\n\r\n.timestamp {\r\n    color: #555;\r\n    font-style: italic;\r\n    font-size: 1em;\r\n    float: left;\r\n    width: 100%;\r\n}\r\n\r\n.isOwnTimestamp {\r\n    color: rgb(79, 195, 247);\r\n    font-size: 0.8em;\r\n    margin-bottom: 0;\r\n    float: right;\r\n}\r\n\r\n.messageContent {\r\n    height: auto;\r\n    flex: 9;\r\n    background-color: #a5a5a5;\r\n    padding: 10px;\r\n    border-top-right-radius: 15px;\r\n    border-bottom-right-radius: 15px;\r\n}\r\n\r\n.isOwnMessageContent {\r\n    background-color: #0078e3;\r\n    color: #fafafa;\r\n    text-align: end;      \r\n    border-top-left-radius: 15px;\r\n    border-bottom-left-radius: 15px;\r\n    border-top-right-radius: 0px;\r\n    border-bottom-right-radius: 0px;\r\n}"
 
 /***/ }),
 
@@ -540,7 +541,7 @@ module.exports = ".messageContainer {\r\n    display: flex;\r\n    height: auto;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"messageContainer\" [ngClass]=\"{'isOwnMessageContainer':isOwnMessage}\">\n  <div class=\"messageData\" [ngClass]=\"{'isOwnMessageData':isOwnMessage}\">\n    <img src=\"{{chatMessage.img}}\" class=\"senderImg\">\n    <span class=\"sender\" [ngClass]=\"{'isOwnSender':isOwnMessage}\">\n      {{ userName }}\n    </span>\n    <span class=\"timestamp\" [ngClass]=\"{'isOwnTimestamp':isOwnMessage}\">\n      {{ timeStamp | date:'medium' }}\n    </span>\n  </div>\n  <div class=\"messageContent\" [ngClass]=\"{'isOwnMessageContent':isOwnMessage}\">\n    {{ messageContent }}\n  </div>\n</div>"
+module.exports = "<div class=\"messageContainer\" [ngClass]=\"{'isOwnMessageContainer':isOwnMessage}\">\n  <div class=\"messageData\" [ngClass]=\"{'isOwnMessageData':isOwnMessage}\">\n    <img src=\"{{chatMessage.img}}\" class=\"senderImg\">\n    \n  </div>\n  <div class=\"messageContent\" [ngClass]=\"{'isOwnMessageContent':isOwnMessage}\">\n      <span class=\"sender\" [ngClass]=\"{'isOwnSender':isOwnMessage}\">\n          {{ userName }}\n        </span>\n    {{ messageContent }}\n    <span class=\"timestamp\" [ngClass]=\"{'isOwnTimestamp':isOwnMessage}\">\n        {{ timeStamp }}\n      </span>\n  </div>\n</div>"
 
 /***/ }),
 
